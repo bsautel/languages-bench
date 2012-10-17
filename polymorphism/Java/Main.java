@@ -13,7 +13,7 @@ public class Main
     private static List<Executor> getExecutors()
     {
         List<Executor> executors = new LinkedList<Executor>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 1000000; i++) {
             executors.add(new ModuloExecutor());
             executors.add(new SumExecutor());
         }
