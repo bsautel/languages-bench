@@ -24,8 +24,18 @@ void execute(std::list<Executor*> executors)
     }
 }
 
+void free(std::list<Executor*> executors)
+{
+  for(std::list<Executor*>::iterator it = executors.begin(); it != executors.end(); ++it)
+  {
+    delete *it;
+  }
+}
+
 int main(int argc, char **argv)
 {
-  execute(getExecutors());
+  std::list<Executor*> executors = getExecutors();
+  execute(executors);
+  free(executors);
   return 0;
 }
