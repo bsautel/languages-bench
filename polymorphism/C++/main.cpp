@@ -13,7 +13,7 @@ std::list<Executor*> getExecutors()
   return executors;
 }
 
-void execute(std::list<Executor*> executors)
+void execute(std::list<Executor*>& executors)
 {
   for (int i = 0; i < 1000; ++i)
     {
@@ -24,7 +24,7 @@ void execute(std::list<Executor*> executors)
     }
 }
 
-void free(std::list<Executor*> executors)
+void free(std::list<Executor*>& executors)
 {
   for(std::list<Executor*>::iterator it = executors.begin(); it != executors.end(); ++it)
   {
